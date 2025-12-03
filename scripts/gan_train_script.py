@@ -1,13 +1,7 @@
 """
-gan_train_script.py
-
 Train a simple Generative Adversarial Network (GAN) on MNIST and Fashion-MNIST
 using PyTorch. This script is the linear, fully reproducible version of the
 notebooks in the `notebooks/` folder.
-
-Run this file from the project root, e.g.:
-
-    python scripts/gan_train_script.py
 """
 
 # ----- Imports -----
@@ -24,12 +18,12 @@ from torchvision import datasets, transforms, utils as vutils
 import matplotlib.pyplot as plt
 
 
-# ----- Device configuration -----
+# Device configuration
 # Use GPU if available; otherwise fall back to CPU.
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
-# ----- Hyperparameters -----
+# Hyperparameters
 # Size of the latent noise vector z.
 Z_DIM = 64
 
@@ -48,7 +42,7 @@ PRINT_EVERY = 200           # how often to print training progress
 IMG_DIR = "img"
 
 
-# ----- Data loading -----
+# Data loading
 def get_dataloader(dataset_name: str, batch_size: int) -> DataLoader:
     """
     Create a DataLoader for either MNIST or Fashion-MNIST.
@@ -97,7 +91,7 @@ def get_dataloader(dataset_name: str, batch_size: int) -> DataLoader:
     return loader
 
 
-# ----- Model definitions -----
+# Model definitions
 class Generator(nn.Module):
     """
     Generator network.
@@ -151,7 +145,7 @@ class Discriminator(nn.Module):
         return self.model(x)
 
 
-# ----- Training function -----
+# Training function
 def train_gan(
     dataset_name: str,
     num_epochs: int,
@@ -222,9 +216,7 @@ def train_gan(
             real_imgs = real_imgs.to(device)
             batch_size_curr = real_imgs.size(0)
 
-            # ============================
             # 1. Train Discriminator
-            # ============================
             # Zero out discriminator gradients.
             optimizer_D.zero_grad()
 
@@ -247,9 +239,7 @@ def train_gan(
             loss_D.backward()
             optimizer_D.step()
 
-            # ============================
             # 2. Train Generator
-            # ============================
             # Zero out generator gradients.
             optimizer_G.zero_grad()
 
@@ -286,7 +276,7 @@ def train_gan(
     return generator, G_losses, D_losses, fixed_noise
 
 
-# ----- Helper functions to save outputs -----
+# Helper functions to save outputs
 def ensure_img_dir():
     """Create the image directory if it does not already exist."""
     os.makedirs(IMG_DIR, exist_ok=True)
@@ -331,7 +321,7 @@ def save_generated_samples(generator, fixed_noise, dataset_name: str):
     generator.train()
 
 
-# ----- Main entry point -----
+# Main entry point
 if __name__ == "__main__":
     # Train on MNIST (digits).
     gen_mnist, G_mnist, D_mnist, fixed_noise_mnist = train_gan(

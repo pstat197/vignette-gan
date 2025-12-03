@@ -35,17 +35,7 @@ vignette-gan/
     ├── fig-training-progress.png   # Example of training evolution
     └── fig-sample-output.png       # Example of final generated images
     └── Intro_GAN_training_progress/              # Generator output at different training epochs
-        ├── epoch_001.png
-        └── epoch_010.png
-        └── epoch_020.png
-        └── epoch_030.png
-        └── epoch_040.png
-        └── epoch_050.png
-        └── epoch_060.png
-        └── epoch_070.png
-        └── epoch_080.png
-        └── epoch_090.png
-        └── epoch_100.png
+
     
 ```
 

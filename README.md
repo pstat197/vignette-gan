@@ -40,4 +40,6 @@ vignette-gan/
 ## Reference list
 1. Goodfellow, Ian, et al. 2014. *Generative Adversarial Nets*. https://arxiv.org/abs/1406.2661  
 2. PyTorch DCGAN Tutorial. https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html  
-3. Fashion-MNIST Dataset. https://github.com/zalandoresearch/fashion-mnist  
+3. Fashion-MNIST Dataset. https://github.com/zalandoresearch/fashion-mnist
+4. Research and Application Analysis of Generative Adversarial Network Technology:
+       https://www.researchgate.net/publication/392254607_Research_and_Application_Analysis_of_Generative_Adversarial_Network_Technology

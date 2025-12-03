@@ -3,7 +3,7 @@
 Vignette on building and training a basic Generative Adversarial Network (GAN) to demonstrate adversarial learning and image generation using MNIST and Fashion-MNIST; created as a class project for PSTAT197A in Fall 2025.
 
 ## Contributors
-Sam Caruthers 
+Sam Caruthers  
 Aidan Frazier  
 Anna Gornyitzki   
 Charles Yang  

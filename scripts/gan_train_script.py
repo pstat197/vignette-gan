@@ -4,11 +4,7 @@ using PyTorch. This script is the linear, fully reproducible version of the
 notebooks in the `notebooks/` folder.
 """
 
-# ----- Imports -----
-# Standard library
 import os
-
-# Third-party imports: PyTorch, torchvision, matplotlib
 import torch
 import torch.nn as nn
 import torch.optim as optim

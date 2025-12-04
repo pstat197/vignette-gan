@@ -3,11 +3,11 @@ Vignette on building and training a basic Generative Adversarial Network (GAN) u
 
 ## Contributors
 
-Sam Caruthers
-Aidan Frazier
-Anna Gornyitzki
-Charles Yang
-Justin Zhou
+Sam Caruthers  
+Aidan Frazier  
+Anna Gornyitzki  
+Charles Yang  
+Justin Zhou  
 
 ## Vignette abstract
 

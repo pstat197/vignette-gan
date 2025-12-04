@@ -15,8 +15,8 @@ This vignette introduces the fundamentals of Generative Adversarial Networks (GA
 
 ### Background on GANs
 A Generative Adversarial Network consists of two neural networks trained together:   
-Generator (G): Produces synthetic images from random noise.  
-Discriminator (D): Attempts to distinguish real images from fake ones.  
+**Generator (G)**: Produces synthetic images from random noise.  
+**Discriminator (D)**: Attempts to distinguish real images from fake ones.  
 During training, the generator improves by trying to fool the discriminator, while the discriminator becomes better at detecting synthetic images. This adversarial dynamic, introduced by Goodfellow et al. (2014), allows GANs to learn complex data distributions and generate new samples that resemble real data.
 
 ### Limitations of GANs

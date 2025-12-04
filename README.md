@@ -14,6 +14,11 @@ Justin Zhou
 This vignette introduces the fundamentals of Generative Adversarial Networks (GANs) and demonstrates how to build and train a simple GAN using PyTorch (A Machine Learning Library). Using the MNIST and Fashion-MNIST datasets, the vignette explains the generator–discriminator framework of GANs, outlines the adversarial training process, and visualizes how synthetic images improve over the course of training. The primary notebook, [Intro_GAN.ipynb](https://github.com/pstat197/vignette-gan/blob/main/notebooks/Intro_GAN.ipynb), provides step-by-step explanations alongside executable code, while a secondary notebook, [GAN_More_Examples.ipynb](https://github.com/pstat197/vignette-gan/blob/main/notebooks/GAN_More_Examples.ipynb), extends the analysis with additional experiments. A standalone training script reproduces the results programmatically. This vignette serves as an accessible introduction for students learning how GANs operate and how they can be applied to image generation tasks.
 
 ### Background on GANs
+
+<div align="center">
+  <img src="https://github.com/pstat197/vignette-gan/blob/main/img/gan_diagram.png?raw=true" width="550"/>
+</div>
+
 A Generative Adversarial Network consists of two neural networks trained together:   
 **Generator (G)**: Produces synthetic images from random noise.  
 **Discriminator (D)**: Attempts to distinguish real images from fake ones.  

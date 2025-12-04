@@ -24,21 +24,21 @@ It is important to note that since GANs were developed in 2014 and are sometimes
 
 ## Repository contents
 vignette-gan/  
-├── README.md          # Project introduction
+├── README.md          # Project introduction  
 ├── LICENSE                 
 │  
 ├── notebooks/  
-│   ├── GAN_More_Examples.ipynb      # Additional GAN experiments
-│   └── Intro_GAN.ipynb    # Main vignette with explanations + PyTorch code
+│   ├── GAN_More_Examples.ipynb      # Additional GAN experiments  
+│   └── Intro_GAN.ipynb    # Main vignette with explanations + PyTorch code  
 │  
 ├── scripts/  
-│   ├── gan_train_script.py       # Fully reproducible GAN training script
+│   ├── gan_train_script.py       # Fully reproducible GAN training script  
 │   └── data/    
-│   │   └── raw/       # MNIST/Fashion-MNIST downloads (handled automatically)
-│   └── img/           # Generated samples + loss curves
+│   │   └── raw/       # MNIST/Fashion-MNIST downloads (handled automatically)  
+│   └── img/           # Generated samples + loss curves  
 │  
 └── img/  
-│   └── Intro_GAN_training_progress/     # Generated samples runs and improvements upon additional executions
+│   └── Intro_GAN_training_progress/     # Generated samples runs and improvements upon additional executions  
 
 
 

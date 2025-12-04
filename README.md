@@ -40,7 +40,7 @@ vignette-gan/
 │   └── raw/  
 │  
 └── img/  
-               └── Intro_GAN_training_progress/  
+│   └── Intro_GAN_training_progress/  
 
 
 

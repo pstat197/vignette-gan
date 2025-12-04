@@ -45,7 +45,8 @@ vignette-gan/
 │   └── img/           # Generated samples + loss curves  
 │  
 └── img/  
-    └── Intro_GAN_training_progress/     # Generator output at different training epochs  
+    └── Intro_GAN_training_progress/     # Generator output at different training epochs
+    └── gan_diagram.png/                 # GAN Diagram for README.md
 ```
 
 

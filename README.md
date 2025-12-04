@@ -14,10 +14,10 @@ Justin Zhou
 This vignette introduces the fundamentals of Generative Adversarial Networks (GANs) and demonstrates how to build and train a simple GAN using PyTorch (A Machine Learning Library). Using the MNIST and Fashion-MNIST datasets, the vignette explains the generator–discriminator framework of GANs, outlines the adversarial training process, and visualizes how synthetic images improve over the course of training. The primary notebook, Intro_GAN.ipynb, provides step-by-step explanations alongside executable code, while a secondary notebook, GAN_More_Examples.ipynb, extends the analysis with additional experiments. A standalone training script reproduces the results programmatically. This vignette serves as an accessible introduction for students learning how GANs operate and how they can be applied to image generation tasks.
 
 ### Background on GANs
-A Generative Adversarial Network consists of two neural networks trained together:
-Generator (G): Produces synthetic images from random noise.
-Discriminator (D): Attempts to distinguish real images from fake ones.
-During training, the generator improves by trying to fool the discriminator, while the discriminator becomes better at detecting synthetic images. This adversarial dynamic—introduced by Goodfellow et al. (2014)—allows GANs to learn complex data distributions and generate new samples that resemble real data.
+A Generative Adversarial Network consists of two neural networks trained together:   
+Generator (G): Produces synthetic images from random noise.  
+Discriminator (D): Attempts to distinguish real images from fake ones.  
+During training, the generator improves by trying to fool the discriminator, while the discriminator becomes better at detecting synthetic images. This adversarial dynamic, introduced by Goodfellow et al. (2014), allows GANs to learn complex data distributions and generate new samples that resemble real data.
 
 ### Limitations of GANs
 It is important to note that since GANs were developed in 2014 and are sometimes seen as rather outdated due to its main limitation. The main limitation is mode collapse, which one should always keep in mind when implementing GANs. Mode collapse is when the generator produces only a small number of distinct outputs (or even a single output) despite many possible modes in the real data distribution. This takes place when: the generator discovers one pattern that consistently fools the discriminator, it may keep generating that pattern rather than exploring the full data distribution. Depsite this flaw GANs are a powerful method if this can be avoided

@@ -23,6 +23,8 @@ During training, the generator improves by trying to fool the discriminator, whi
 It is important to note that since GANs were developed in 2014 and are sometimes seen as rather outdated due to its main limitation. The main limitation is mode collapse, which one should always keep in mind when implementing GANs. Mode collapse is when the generator produces only a small number of distinct outputs (or even a single output) despite many possible modes in the real data distribution. This takes place when: the generator discovers one pattern that consistently fools the discriminator, it may keep generating that pattern rather than exploring the full data distribution. Depsite this flaw GANs are a powerful method if this can be avoided
 
 ## Repository contents
+
+```
 vignette-gan/  
 ├── README.md          # Project introduction  
 ├── LICENSE                 
@@ -39,7 +41,7 @@ vignette-gan/
 │  
 └── img/  
 │   └── Intro_GAN_training_progress/     # Generated samples runs and improvements upon additional executions  
-
+```
 
 
 ## References

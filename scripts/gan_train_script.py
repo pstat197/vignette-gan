@@ -90,56 +90,54 @@ def get_dataloader(dataset_name: str, batch_size: int) -> DataLoader:
 # Model definitions
 class Generator(nn.Module):
     """
-    Generator network.
-
-    Takes random noise (z) as input and outputs a fake image tensor of shape
-    (batch_size, 1, 28, 28). This is the same simple MLP structure as in the
-    Intro_GAN notebook.
+    The Generator takes random noise (z) as input and outputs a fake image.
+    We use a fully connected network (MLP) with batch normalization for better training.
+    This matches the architecture used in Intro_GAN.ipynb.
     """
-
     def __init__(self, z_dim: int, img_size: int):
         super().__init__()
         self.model = nn.Sequential(
-            nn.Linear(z_dim, 128),
+            nn.Linear(z_dim, 256),
+            nn.BatchNorm1d(256),      # Added batch normalization
             nn.ReLU(True),
-            nn.Linear(128, 256),
+            nn.Linear(256, 512),
+            nn.BatchNorm1d(512),      # Added batch normalization
             nn.ReLU(True),
-            nn.Linear(256, img_size),
-            nn.Tanh(),  # output values in [-1, 1]
+            nn.Linear(512, img_size),
+            nn.Tanh(),                # output values in [-1, 1]
         )
 
     def forward(self, z: torch.Tensor) -> torch.Tensor:
-        # Pass the noise through the MLP.
         x = self.model(z)
-        # Reshape to image tensor (batch_size, channels, height, width).
+        # reshape to (batch_size, 1, 28, 28)
         return x.view(-1, IMG_CHANNELS, 28, 28)
 
 
 class Discriminator(nn.Module):
     """
-    Discriminator network.
-
-    Takes an image as input and outputs a single probability in [0, 1]:
-    - 1 means "real"
-    - 0 means "fake"
+    The Discriminator takes an image and outputs a single number between 0 and 1:
+    - 1 means 'real'
+    - 0 means 'fake'
+    We use dropout for regularization to prevent overfitting.
+    This matches the architecture used in Intro_GAN.ipynb.
     """
-
     def __init__(self, img_size: int):
         super().__init__()
         self.model = nn.Sequential(
-            nn.Linear(img_size, 256),
+            nn.Linear(img_size, 512),
             nn.LeakyReLU(0.2, inplace=True),
-            nn.Linear(256, 128),
+            nn.Dropout(0.3),          # Added dropout for regularization
+            nn.Linear(512, 256),
             nn.LeakyReLU(0.2, inplace=True),
-            nn.Linear(128, 1),
-            nn.Sigmoid(),  # output probability
+            nn.Dropout(0.3),
+            nn.Linear(256, 1),
+            nn.Sigmoid(),             # output probability in [0, 1]
         )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        # Flatten image to a vector of length img_size.
+        # Flatten image to vector
         x = x.view(x.size(0), -1)
         return self.model(x)
-
 
 # Training function
 def train_gan(

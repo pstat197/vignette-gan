@@ -40,7 +40,7 @@ vignette-gan/
 │   └── img/           # Generated samples + loss curves  
 │  
 └── img/  
-    └── Intro_GAN_training_progress/     # Generated samples runs and improvements upon additional executions  
+    └── Intro_GAN_training_progress/     # Generator output at different training epochs  
 ```
 
 
